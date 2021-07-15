@@ -1,0 +1,73 @@
+body {
+    background: url(../img/background-announceent.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    margin: 0px;
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    margin: 0px;
+    float: left;
+    position: absolute;
+}
+
+#background {
+    filter: blur(10px);
+}
+
+#homepage {
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+    width: 10%;
+}
+
+#announcement {
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}
+
+.first {
+    height: 50px;
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+.second {
+    height: 50px;
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+.mainPart {
+    background-color: rgba(78, 78, 78, 0.7);
+    height: 90%;
+    width: 100%;
+    position: absolute;
+    z-index: -999;
+    bottom: 1px;
+    border: 0px;
+    border-radius: 5%;
+    filter: blur(5px);
+}
+
+.announcement {}
+
+.third {
+    height: 50px;
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+#settings {
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}

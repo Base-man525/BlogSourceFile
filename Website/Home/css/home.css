@@ -1,0 +1,58 @@
+body {
+    background: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    margin: 0px;
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    margin: 0px;
+    float: left;
+}
+
+#background {
+    filter: blur(10px);
+}
+
+#homepage {
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+    width: 10%;
+}
+
+#announcement {
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}
+
+.first {
+    height: 50px;
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+.second {
+    height: 50px;
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+.third {
+    height: 50px;
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+#settings {
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}

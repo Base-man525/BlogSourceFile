@@ -1,0 +1,99 @@
+body {
+    background-image: url(../img/bgimg.jpg);
+    /* èƒŒæ™¯å›¾ç‰‡ */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    /* èƒŒæ™¯å›¾ç‰‡ä¸é‡å¤ */
+    cursor: url(../img/Diamond_Sword.cur), default;
+}
+
+#bigBox {
+    margin: 0 auto;
+    margin-top: 200px;
+    /* loginæ¡†ä¸Žé¡¶éƒ¨çš„è·ç¦» */
+    background-color: #00000090;
+    padding: 20px 50px;
+    /* loginæ¡†èƒŒæ™¯é¢œè‰²å’Œé€æ˜Žåº¦ */
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    /* åœ†è§’è¾¹ */
+    text-align: center;
+    /* æ¡†å†…æ‰€æœ‰å†…å®¹å‰§ä¸­ */
+}
+
+#bigBox h1 {
+    color: white;
+    /* LOGINå­—ä½“é¢œè‰² */
+}
+
+#bigBox .inputBox {
+    margin: 50px;
+    /* è¾“å…¥æ¡†é¡¶éƒ¨ä¸ŽLOGINæ ‡é¢˜çš„é—´è· */
+}
+
+#bigBox .inputBox .inputText {
+    margin: 20px;
+    /* è¾“å…¥æ¡†ä¹‹é—´çš„è·ç¦» */
+}
+
+#bigBox .inputBox .inputText span {
+    color: white;
+    /* iconé¢œè‰² */
+}
+
+#bigBox .inputBox .inputText input {
+    border: 0;
+    /* åˆ é™¤è¾“å…¥æ¡†è¾¹æ¡† */
+    padding: 10px 10px;
+    /* è¾“å…¥æ¡†å†…çš„é—´è· */
+    border-bottom: 1px solid white;
+    /* è¾“å…¥æ¡†ç™½è‰²ä¸‹åˆ’çº¿ */
+    background-color: #00000000;
+    /* è¾“å…¥æ¡†é€æ˜Ž */
+    color: white;
+    /* è¾“å…¥å­—ä½“çš„é¢œè‰² */
+    cursor: url(../img/click.cur), default;
+}
+
+#bigBox .loginButton {
+    margin: 10px;
+    /* æŒ‰é’®é¡¶éƒ¨ä¸Žè¾“å…¥æ¡†çš„è·ç¦» */
+    width: 150px;
+    height: 25px;
+    color: white;
+    /* æŒ‰é’®å­—ä½“é¢œè‰² */
+    border: 0;
+    /* åˆ é™¤æŒ‰é’®è¾¹æ¡† */
+    border-radius: 20px;
+    /* æŒ‰é’®åœ†è§’è¾¹ */
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    /* æŒ‰é’®é¢œè‰² */
+    cursor: url(../img/click.cur), default;
+}
+
+#register {
+    /*æ³¨å†Œè´¦å·*/
+    color: white;
+    text-decoration: none;
+    cursor: url(../img/click.cur), default;
+    text-align: center;
+}
+
+#register:hover {
+    cursor: url(../img/click.cur), default;
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+/*
+*#swx{
+*   swx...
+*}*/
+
+html {
+    cursor: url(../img/Diamond_Sword.cur), default;
+}

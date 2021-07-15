@@ -1,0 +1,115 @@
+#register {
+    margin: 0 auto;
+    margin-top: 200px;
+    /* loginæ¡†ä¸Žé¡¶éƒ¨çš„è·ç¦» */
+    background-color: #00000090;
+    padding: 20px 50px;
+    /* loginæ¡†èƒŒæ™¯é¢œè‰²å’Œé€æ˜Žåº¦ */
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    /* åœ†è§’è¾¹ */
+    text-align: center;
+    /* æ¡†å†…æ‰€æœ‰å†…å®¹å‰§ä¸­ */
+}
+
+#title {
+    color: white;
+    text-align: center;
+}
+
+.Back_to_login {
+    right: 0px;
+    position: absolute;
+    background-color: #00000090;
+    padding: 20px 50px;
+    border-radius: 50%;
+}
+
+#register h1 {
+    color: white;
+    /* LOGIN字体颜色 */
+}
+
+#register .inputBox {
+    margin-top: 50px;
+    /* 输入框顶部与LOGIN标题的间距 */
+    cursor: url(../img/click.cur), default;
+}
+
+#register .inputBox .inputText {
+    margin-top: 20px;
+    /* 输入框之间的距离 */
+    cursor: url(../img/click.cur), default;
+}
+
+#register .inputBox .inputText span {
+    color: white;
+    /* icon颜色 */
+    cursor: url(../img/click.cur), default;
+}
+
+#register .inputBox .inputText input {
+    border: 0;
+    /* 删除输入框边框 */
+    padding: 10px 10px;
+    /* 输入框内的间距 */
+    border-bottom: 1px solid white;
+    /* 输入框白色下划线 */
+    background-color: #00000000;
+    /* 输入框透明 */
+    color: white;
+    /* 输入字体的颜色 */
+    cursor: url(../img/click.cur), default;
+}
+
+#register .loginButton {
+    margin-top: 30px;
+    /* 按钮顶部与输入框的距离 */
+    width: 150px;
+    /*宽度*/
+    height: 25px;
+    /*高度*/
+    color: white;
+    /* 按钮字体颜色 */
+    border: 0;
+    /* 删除按钮边框 */
+    border-radius: 20px;
+    /* 按钮圆角边 */
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    /* 按钮颜色 */
+    cursor: url(../img/click.cur), default;
+}
+
+#login {
+    /*对于返回login界面进行一个布局调整*/
+    text-decoration: none;
+    color: white;
+    cursor: url(../img/click.cur), default;
+}
+
+#login:hover {
+    /*设置伪类触发动画*/
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: url(../img/click.cur), default;
+}
+
+#eyes {
+    cursor: url(../img/click.cur), default;
+}
+
+body {
+    cursor: url(../img/Diamond_Sword.cur), default;
+}
+
+
+/*
+*#swx{
+*   swx...
+*}*/
+
+html {
+    cursor: url(../img/Diamond_Sword.cur), default;
+}

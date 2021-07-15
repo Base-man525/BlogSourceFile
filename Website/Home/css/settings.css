@@ -1,0 +1,54 @@
+body {
+    background: url(../img/background-Settings.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0px;
+}
+
+.third {
+    height: 50px;
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+#settings {
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    margin: 0px;
+    float: left;
+}
+
+#homepage {
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+    width: 10%;
+}
+
+#announcement {
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}
+
+.first {
+    height: 50px;
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+.second {
+    height: 50px;
+    width: 10%;
+    float: left;
+    text-align: center;
+}
