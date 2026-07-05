@@ -31,6 +31,7 @@
                 <input type="password" placeholder="Password" required name='Password' />
             </div>
             <button class="loginButton" type="submit">Login</button>
+            <button class="loginButton" type="button" onclick="guestLogin()">Guest Login</button>
             <div>
                 <a id='register' href='./Account HTML/Register.html'><span>Don't have account?Click here!</span></a>
             </div>
@@ -45,6 +46,11 @@
         function Bye(b) {
             console.log("Bye,world");
             return 0;
+        }
+
+        function guestLogin() {
+            localStorage.setItem('user', JSON.stringify({ username: 'Guest', isGuest: true }));
+            window.location.href = './Home/Home.html';
         }
     </script>
     <audio autoplay='autoplay' loop='true' src="background-music/Login the website and Registered the Accounts' music/ハルノユキ (春之雪)-Lily Sayonara.mp3">

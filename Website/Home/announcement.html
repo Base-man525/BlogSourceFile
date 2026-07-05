@@ -1,78 +1,163 @@
-<!DOCTYPE <!DOCTYPE html>
-<!--[if lt IE 7]>       <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="zh-CN">
 
 <head>
-    <meta charset="utf-8" />
-    <!--确定编码-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!---->
-    <meta name='author' content='꧁༺๑Base man๑༻꧂' />
-    <!--作者-->
-    <title>Home</title>
-    <!--标题-->
-    <meta name="description" content="This is a registered" />
-    <!--网页描述-->
-    <meta name='keywords' content='gczxzcjm' />
-    <!--搜索关键字-->
-    <meta name='copyright' content='所有解释权归꧁༺๑Base man๑༻꧂所有' />
-    <!--版权-->
-    <meta http-equiv='Window-target' content='_top' />
-    <!--http协议(避免一些不必要的麻烦)-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
-    <!--更好的网页-->
-    <meta name="renderer" content="webkit" />
-    <!---->
-    <meta name='generator' content='Visual Studio Code' />
-    <!--编写网页所使用的编译器-->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <!---->
-    <link rel="stylesheet" href="./css/announcement.css" />
-    <!--导入名称为Register.css的文件-->
-    <link rel='stylesheet' href='../css/iconfont.css' />
-    <!--导入名称为iconfont.css的文件-->
-    <base href='Account HTML' />
-    <!--确定本目录-->
-    <link rel='shortcut icon' href='../Account HTML/img/ICON.jpg' />
-    <!--导入网页图标文件，名称为ICON.jpg-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="博客公告">
+    <meta name="author" content="Base man">
+    <title>我的博客 - 公告</title>
+    <link rel="stylesheet" href="./css/announcement.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="../Account HTML/img/ICON.jpg">
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <div class='header'>
-        <div id='background'></div>
-        <!--背景(虚化)-->
-        <div class='jumpList'>
-            <!--跳转列表-->
-            <div class='first'>
-                <!--第一个模块-->
-                <a href='./Home.html' id='homepage'>首页</a>
-                <!--超链接-->
+    <script>
+        try {
+            var user = localStorage.getItem('user');
+            if (!user) {
+                window.location.href = '../login.html';
+            }
+        } catch (e) {
+            window.location.href = '../login.html';
+        }
+    </script>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <i class="fas fa-blog"></i>
+                <span>我的博客</span>
             </div>
-            <div class='second'>
-                <!--第二个模块-->
-                <a href='./announcement.html' id='announcement'>公告</a>
-                <!--超链接-->
+            <div class="navbar-links">
+                <a href="./Home.html"><i class="fas fa-home"></i> 首页</a>
+                <a href="./announcement.html" class="active"><i class="fas fa-bullhorn"></i> 公告</a>
+                <a href="./settings.html"><i class="fas fa-cog"></i> 设置</a>
             </div>
-            <div class='third'>
-                <!--第三个模块-->
-                <a href='./settings.html' id='settings'>设置</a>
-                <!--超链接-->
+            <div class="navbar-user">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span id="username">Guest</span>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
             </div>
         </div>
-    </div>
-    <div class='mainPart'>
-        <div class='announcement'></div>
-    </div>
-    <script src="" async defer></script>
-    <audio autoplay='autoplay' loop='true'>
-        <source src="../background-music/Website announcement's music/Troye Sivan - Strawberries & Cigarettes.mp3" />
-    </audio>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>公告通知</h1>
+            <p>获取最新的博客动态和重要消息</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="announcement-list">
+                <div class="announcement-item">
+                    <div class="announcement-header">
+                        <span class="announcement-tag important">重要</span>
+                        <span class="announcement-date">2024-01-15</span>
+                    </div>
+                    <h3 class="announcement-title">博客改版完成</h3>
+                    <p class="announcement-content">博客已完成全面改版，采用全新的现代化设计风格，增加了更多功能和优化用户体验。感谢大家的支持！</p>
+                </div>
+
+                <div class="announcement-item">
+                    <div class="announcement-header">
+                        <span class="announcement-tag">新功能</span>
+                        <span class="announcement-date">2024-01-12</span>
+                    </div>
+                    <h3 class="announcement-title">新增评论系统</h3>
+                    <p class="announcement-content">博客现已支持评论功能，欢迎大家在文章下方留言讨论，分享您的想法和见解。</p>
+                </div>
+
+                <div class="announcement-item">
+                    <div class="announcement-header">
+                        <span class="announcement-tag">维护</span>
+                        <span class="announcement-date">2024-01-10</span>
+                    </div>
+                    <h3 class="announcement-title">服务器维护通知</h3>
+                    <p class="announcement-content">将于本周日凌晨进行服务器维护，预计维护时间为2小时，期间网站可能无法访问，敬请谅解。</p>
+                </div>
+
+                <div class="announcement-item">
+                    <div class="announcement-header">
+                        <span class="announcement-tag">更新</span>
+                        <span class="announcement-date">2024-01-08</span>
+                    </div>
+                    <h3 class="announcement-title">文章分类优化</h3>
+                    <p class="announcement-content">优化了文章分类系统，新增了多个分类标签，让您更方便地找到感兴趣的内容。</p>
+                </div>
+
+                <div class="announcement-item">
+                    <div class="announcement-header">
+                        <span class="announcement-tag">公告</span>
+                        <span class="announcement-date">2024-01-05</span>
+                    </div>
+                    <h3 class="announcement-title">欢迎新用户</h3>
+                    <p class="announcement-content">感谢新用户的加入！希望大家在这里能够找到有价值的内容，也欢迎分享自己的经验和心得。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我</h3>
+                    <p>热爱编程的开发者，专注于前端技术，热爱分享和交流</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="./Home.html">首页</a></li>
+                        <li><a href="./announcement.html">公告</a></li>
+                        <li><a href="./settings.html">设置</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 我的博客. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var user = localStorage.getItem('user');
+            if (user) {
+                try {
+                    var userData = JSON.parse(user);
+                    document.getElementById('username').textContent = userData.username || 'Guest';
+                } catch (e) {
+                    document.getElementById('username').textContent = 'Guest';
+                }
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = '../login.html';
+        }
+    </script>
+
+    <audio autoplay="autoplay" loop="true">
+        <source src="../background-music/Website announcement's music/Troye Sivan - Strawberries & Cigarettes.mp3">
+    
 </body>
 
 </html>

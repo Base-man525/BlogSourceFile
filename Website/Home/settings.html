@@ -1,64 +1,260 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html lang='en'>
+<html lang="zh-CN">
 
 <head>
-    <meta charset="utf-8" />
-    <!--确定编码-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name='author' content='꧁༺๑Base man๑༻꧂' />
-    <title>Settings</title>
-    <!--标题-->
-    <meta name="description" content="This is a registered" />
-    <meta name='keywords' content='gczxzcjm' />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name='copyright' content='所有解释权归꧁༺๑Base man๑༻꧂所有' />
-    <meta http-equiv='Window-target' content='_top' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
-    <meta name="renderer" content="webkit" />
-    <meta name='generator' content='Visual Studio Code' />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel='stylesheet' href='../css/iconfont.css' />
-    <link rel='stylesheet' type='text/css' href='css/settings.css'>
-    <!--导入名称为iconfont.css的文件-->
-    <base href='Account HTML' />
-    <!--确定本目录-->
-    <link rel='shortcut icon' href='../Account HTML/img/ICON.jpg' />
-    <!--导入网页图标文件，名称为ICON.jpg-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="用户设置">
+    <meta name="author" content="Base man">
+    <title>我的博客 - 设置</title>
+    <link rel="stylesheet" href="./css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="../Account HTML/img/ICON.jpg">
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <div class='header'>
-        <div id='background'></div>
-        <!--背景(虚化)-->
-        <div class='jumpList'>
-            <!--跳转列表-->
-            <div class='first'>
-                <!--第一个模块-->
-                <a href='./Home.html' id='homepage'>首页</a>
-                <!--超链接-->
+    <script>
+        try {
+            var user = localStorage.getItem('user');
+            if (!user) {
+                window.location.href = '../login.html';
+            }
+        } catch (e) {
+            window.location.href = '../login.html';
+        }
+    </script>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <i class="fas fa-blog"></i>
+                <span>我的博客</span>
             </div>
-            <div class='second'>
-                <!--第二个模块-->
-                <a href='./announcement.html' id='announcement'>公告</a>
-                <!--超链接-->
+            <div class="navbar-links">
+                <a href="./Home.html"><i class="fas fa-home"></i> 首页</a>
+                <a href="./announcement.html"><i class="fas fa-bullhorn"></i> 公告</a>
+                <a href="./settings.html" class="active"><i class="fas fa-cog"></i> 设置</a>
             </div>
-            <div class='third'>
-                <!--第三个模块-->
-                <a href='./settings.html' id='settings'>设置</a>
-                <!--超链接-->
+            <div class="navbar-user">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span id="username">Guest</span>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
             </div>
         </div>
-        <script src="" async defer></script>
-        <audio autoplay='autoplay' loop='true'>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>个人设置</h1>
+            <p>管理您的账户信息和偏好设置</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="settings-grid">
+                <div class="settings-sidebar">
+                    <div class="sidebar-item active" onclick="showSection('profile')">
+                        <i class="fas fa-user-circle"></i>
+                        <span>个人信息</span>
+                    </div>
+                    <div class="sidebar-item" onclick="showSection('account')">
+                        <i class="fas fa-key"></i>
+                        <span>账户安全</span>
+                    </div>
+                    <div class="sidebar-item" onclick="showSection('notification')">
+                        <i class="fas fa-bell"></i>
+                        <span>通知设置</span>
+                    </div>
+                    <div class="sidebar-item" onclick="showSection('about')">
+                        <i class="fas fa-info-circle"></i>
+                        <span>关于</span>
+                    </div>
+                </div>
+
+                <div class="settings-content">
+                    <div id="profile" class="settings-section active">
+                        <h2 class="section-title">个人信息</h2>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label for="name">用户名</label>
+                                <input type="text" id="name" value="Guest" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">邮箱地址</label>
+                                <input type="email" id="email" placeholder="请输入邮箱地址">
+                            </div>
+                            <div class="form-group">
+                                <label for="bio">个人简介</label>
+                                <textarea id="bio" rows="4" placeholder="介绍一下您自己..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">所在地</label>
+                                <input type="text" id="location" placeholder="您的所在地">
+                            </div>
+                            <button type="button" class="submit-btn" onclick="saveProfile()">保存更改</button>
+                        </form>
+                    </div>
+
+                    <div id="account" class="settings-section">
+                        <h2 class="section-title">账户安全</h2>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label for="current-password">当前密码</label>
+                                <input type="password" id="current-password" placeholder="请输入当前密码">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">新密码</label>
+                                <input type="password" id="new-password" placeholder="请输入新密码">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">确认新密码</label>
+                                <input type="password" id="confirm-password" placeholder="请再次输入新密码">
+                            </div>
+                            <button type="button" class="submit-btn" onclick="changePassword()">修改密码</button>
+                        </form>
+                    </div>
+
+                    <div id="notification" class="settings-section">
+                        <h2 class="section-title">通知设置</h2>
+                        <div class="settings-form">
+                            <div class="notification-item">
+                                <div class="notification-info">
+                                    <h4>文章更新通知</h4>
+                                    <p>当有新文章发布时接收通知</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-info">
+                                    <h4>评论回复通知</h4>
+                                    <p>当有人回复您的评论时接收通知</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-info">
+                                    <h4>邮件通知</h4>
+                                    <p>通过邮件接收重要通知</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <button type="button" class="submit-btn" onclick="saveNotifications()">保存设置</button>
+                        </div>
+                    </div>
+
+                    <div id="about" class="settings-section">
+                        <h2 class="section-title">关于</h2>
+                        <div class="about-content">
+                            <div class="about-item">
+                                <h4>版本信息</h4>
+                                <p>当前版本: v1.0.0</p>
+                            </div>
+                            <div class="about-item">
+                                <h4>开发团队</h4>
+                                <p>Base man</p>
+                            </div>
+                            <div class="about-item">
+                                <h4>技术栈</h4>
+                                <p>HTML5, CSS3, JavaScript</p>
+                            </div>
+                            <div class="about-item">
+                                <h4>联系方式</h4>
+                                <p>如有问题或建议，欢迎联系我们</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我</h3>
+                    <p>热爱编程的开发者，专注于前端技术，热爱分享和交流</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="./Home.html">首页</a></li>
+                        <li><a href="./announcement.html">公告</a></li>
+                        <li><a href="./settings.html">设置</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 我的博客. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var user = localStorage.getItem('user');
+            if (user) {
+                try {
+                    var userData = JSON.parse(user);
+                    document.getElementById('username').textContent = userData.username || 'Guest';
+                } catch (e) {
+                    document.getElementById('username').textContent = 'Guest';
+                }
+            }
+        });
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+            document.querySelectorAll('.settings-section').forEach(section => section.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function saveProfile() {
+            alert('个人信息已保存！');
+        }
+
+        function changePassword() {
+            alert('密码修改成功！');
+        }
+
+        function saveNotifications() {
+            alert('通知设置已保存！');
+        }
+
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = '../login.html';
+        }
+    </script>
+
+    <audio autoplay="autoplay" loop="true">
         <source src="../background-music/Website Settings' music/DAOKO (ダヲコ) _ 米津玄師 (よねづ けんし) - 打上花火.mp3">
-    </audio>
+    
 </body>
 
 </html>

@@ -1,77 +1,179 @@
-<!DOCTYPE <!DOCTYPE html>
-<!--[if lt IE 7]>      <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
-<html lang='en'>
-<!--网页语言为English-->
+<!DOCTYPE html>
+<html lang="zh-CN">
 
 <head>
-    <meta charset="utf-8" />
-    <!--确定编码-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!---->
-    <meta name='author' content='꧁༺๑Base man๑༻꧂' />
-    <!--作者-->
-    <title>Home</title>
-    <!--标题-->
-    <meta name="description" content="This is a registered" />
-    <!--网页描述-->
-    <meta name='keywords' content='gczxzcjm' />
-    <!--搜索关键字-->
-    <meta name='copyright' content='所有解释权归꧁༺๑Base man๑༻꧂所有' />
-    <!--版权-->
-    <meta http-equiv='Window-target' content='_top' />
-    <!--http协议(避免一些不必要的麻烦)-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
-    <!--更好的网页-->
-    <meta name="renderer" content="webkit" />
-    <!---->
-    <meta name='generator' content='Visual Studio Code' />
-    <!--编写网页所使用的编译器-->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <!---->
-    <link rel="stylesheet" href="./css/home.css" />
-    <!--导入名称为Register.css的文件-->
-    <link rel='stylesheet' href='../css/iconfont.css' />
-    <!--导入名称为iconfont.css的文件-->
-    <base href='Account HTML' />
-    <!--确定本目录-->
-    <link rel='shortcut icon' href='../Account HTML/img/ICON.jpg' />
-    <!--导入网页图标文件，名称为ICON.jpg-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="我的个人博客">
+    <meta name="author" content="Base man">
+    <title>我的博客 - 首页</title>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="../Account HTML/img/ICON.jpg">
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <script src="" async defer></script>
-    <!--JavaScript脚本内嵌-->
-    <div class='header'>
-        <div id='background'></div>
-        <!--背景(虚化)-->
-        <div class='jumpList'>
-            <!--跳转列表-->
-            <div class='first'>
-                <!--第一个模块-->
-                <a href='./Home.html' id='homepage'>首页</a>
-                <!--超链接-->
+    <script>
+        try {
+            var user = localStorage.getItem('user');
+            if (!user) {
+                window.location.href = '../login.html';
+            }
+        } catch (e) {
+            window.location.href = '../login.html';
+        }
+    </script>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <i class="fas fa-blog"></i>
+                <span>我的博客</span>
             </div>
-            <div class='second'>
-                <!--第二个模块-->
-                <a href='./announcement.html' id='announcement'>公告</a>
-                <!--超链接-->
+            <div class="navbar-links">
+                <a href="./Home.html" class="active"><i class="fas fa-home"></i> 首页</a>
+                <a href="./announcement.html"><i class="fas fa-bullhorn"></i> 公告</a>
+                <a href="./settings.html"><i class="fas fa-cog"></i> 设置</a>
             </div>
-            <div class='third'>
-                <!--第三个模块-->
-                <a href='./settings.html' id='settings'>设置</a>
-                <!--超链接-->
+            <div class="navbar-user">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span id="username">Guest</span>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
             </div>
         </div>
-    </div>
-    <!--网页头部-->
-    <audio autoplay='autoplay' loop='true'>
-        <source src="../background-music/Website Home's music/Bandari - 安妮的仙境.mp3" />
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>欢迎来到我的博客</h1>
+            <p>分享技术、生活和思考，记录成长的每一步</p>
+            <button class="hero-btn">开始探索</button>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <h2 class="section-title">最新文章</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="./img/background.jpg" alt="文章封面">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-tag">技术分享</span>
+                        <h3>前端开发最佳实践</h3>
+                        <p>深入探讨现代前端开发中的设计模式、性能优化和代码组织技巧...</p>
+                        <div class="article-footer">
+                            <span class="article-author">Base man</span>
+                            <span class="article-date">2024-01-15</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="./img/background1.jpg" alt="文章封面">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-tag">生活随笔</span>
+                        <h3>编程路上的感悟</h3>
+                        <p>回顾这些年的编程经历，从入门到精通，谈谈我的学习心得...</p>
+                        <div class="article-footer">
+                            <span class="article-author">Base man</span>
+                            <span class="article-date">2024-01-12</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="./img/3.jpg" alt="文章封面">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-tag">技术分享</span>
+                        <h3>响应式设计实战</h3>
+                        <p>从零开始构建响应式网站，掌握媒体查询、弹性布局等核心技术...</p>
+                        <div class="article-footer">
+                            <span class="article-author">Base man</span>
+                            <span class="article-date">2024-01-10</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="./img/background.jpg" alt="文章封面">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-tag">技术分享</span>
+                        <h3>JavaScript高级特性</h3>
+                        <p>深入理解闭包、原型链、异步编程等JavaScript核心概念...</p>
+                        <div class="article-footer">
+                            <span class="article-author">Base man</span>
+                            <span class="article-date">2024-01-08</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我</h3>
+                    <p>热爱编程的开发者，专注于前端技术，热爱分享和交流</p>
+                </div>
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul>
+                        <li><a href="./Home.html">首页</a></li>
+                        <li><a href="./announcement.html">公告</a></li>
+                        <li><a href="./settings.html">设置</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 我的博客. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var user = localStorage.getItem('user');
+            if (user) {
+                try {
+                    var userData = JSON.parse(user);
+                    document.getElementById('username').textContent = userData.username || 'Guest';
+                } catch (e) {
+                    document.getElementById('username').textContent = 'Guest';
+                }
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = '../login.html';
+        }
+    </script>
+
+    <audio autoplay="autoplay" loop="true">
+        <source src="../background-music/Website Home's music/Bandari - 安妮的仙境.mp3">
     </audio>
 </body>
 
