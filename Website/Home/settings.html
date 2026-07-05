@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/settings.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="../Account HTML/img/ICON.jpg">
+    <script src="../js/audio-controller.js"></script>
 </head>
 
 <body>
@@ -153,6 +154,16 @@
                                     <span class="slider"></span>
                                 </label>
                             </div>
+                            <div class="notification-item">
+                                <div class="notification-info">
+                                    <h4>背景音乐</h4>
+                                    <p>在网站中播放背景音乐</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="music-toggle" checked onclick="toggleMusic()">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
                             <button type="button" class="submit-btn" onclick="saveNotifications()">保存设置</button>
                         </div>
                     </div>
@@ -224,6 +235,9 @@
                     document.getElementById('username').textContent = 'Guest';
                 }
             }
+            
+            AudioController.init();
+            document.getElementById('music-toggle').checked = AudioController.isPlaying();
         });
 
         function showSection(sectionId) {
@@ -232,6 +246,11 @@
             
             event.target.classList.add('active');
             document.getElementById(sectionId).classList.add('active');
+        }
+
+        function toggleMusic() {
+            var isPlaying = AudioController.toggle();
+            document.getElementById('music-toggle').checked = isPlaying;
         }
 
         function saveProfile() {
@@ -251,10 +270,6 @@
             window.location.href = '../login.html';
         }
     </script>
-
-    <audio autoplay="autoplay" loop="true">
-        <source src="../background-music/Website Settings' music/DAOKO (ダヲコ) _ 米津玄師 (よねづ けんし) - 打上花火.mp3">
-    
 </body>
 
 </html>
